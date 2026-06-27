@@ -18,7 +18,7 @@ html, body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    overflow-y: auto;  /* ← Allow vertical scrolling */
+    overflow-y: auto;
 }
 
 .video-hero {
@@ -59,23 +59,26 @@ fieldset {
     width: 100px;
 }
 
+/* LEFT SIDE PANEL - Social Media Icons (Discord, TikTok, etc.) */
 #side_pannel {
     width: 90px;
     justify-self: left;
     position: fixed;
     margin-left: 50px;
     margin-top: 20px;
-    z-index: 1001;  /* ← Ensure it's above video */
+    z-index: 1001;
 }
 
+/* RIGHT SIDE PANEL - Mail and Info Icons */
 #side_panne2 {
     width: 130px;
     justify-self: right;
     position: fixed;
     margin-top: 20px;
-    z-index: 1001;  /* ← Ensure it's above video */
+    z-index: 1001;
 }
 
+/* General image styling - affects ALL images */
 img {
     height: 150px;
     transition: transform 0.3s ease;
@@ -100,6 +103,7 @@ img:hover {
     z-index: 1;
 }
 
+/* LEFT SOCIAL ICONS (Discord, TikTok, etc.) */
 #social_icons {
     height: 70px;
     transition: transform 0.5s ease;
@@ -109,6 +113,7 @@ img:hover {
     transform: translate(70px, 0);
 }
 
+/* RIGHT SOCIAL ICONS (Mail, Info) */
 #social_icons2 {
     height: 100px;
     transition: transform 0.5s ease;
@@ -118,68 +123,68 @@ img:hover {
     transform: translate(-50px, 0);
 }
 
-/* Main social media container */
+/* MAIN CONTAINER - Heading + Section Icons */
 #social_medias {
     display: flex;
-    flex-direction: column;  /* ← Stack vertically on all screens */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: auto;
-    max-width: 90%;
-    gap: 20px;
-    padding: 20px;
+    max-width: 95%;
+    gap: 10px;
+    padding: 10px;
     position: relative;
 }
 
 /* Heading */
 h1 {
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
     color: rgb(193, 165, 129);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     width: 100%;
 }
 
-/* Icons container - now in a grid layout */
+/* SECTION ICONS CONTAINER (Arcade, Cinema, Rally, Studio, Library) */
 #sections_icons {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);  /* ← 5 columns */
-    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 900px;
-    padding: 10px;
+    flex-wrap: nowrap;
+    overflow: visible;
 }
 
+/* SECTION ICONS (Arcade, Cinema, Rally, Studio, Library) */
 #img_icons {
-    height: 120px;
+    height: 80px;
     width: auto;
     transition: transform 0.5s ease;
-    justify-self: center;
+    flex-shrink: 0;
 }
 
 #img_icons:hover {
-    transform: translate(0, -30px);
+    transform: translate(0, -20px);
 }
 
-/* Tablet and smaller screens */
+/* TABLET AND MEDIUM SCREENS */
 @media (max-width: 1024px) {
-    #sections_icons {
-        grid-template-columns: repeat(3, 1fr);  /* ← 3 columns on tablets */
-        gap: 15px;
-        max-width: 600px;
-    }
-
     #img_icons {
-        height: 100px;
+        height: 60px;
     }
-
+    
+    #sections_icons {
+        gap: 10px;
+    }
+    
     h1 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
+    /* Side panel adjustments for tablet */
     #side_pannel {
         margin-left: 15px;
         width: 60px;
@@ -207,47 +212,33 @@ h1 {
     }
 }
 
-/* Small screens (phones) */
+/* SMALL SCREENS (Phones) */
 @media (max-width: 768px) {
-    #sections_icons {
-        grid-template-columns: repeat(2, 1fr);  /* ← 2 columns on phones */
-        gap: 10px;
-        max-width: 400px;
-    }
-
     #img_icons {
-        height: 80px;
+        height: 45px;
     }
-
-    h1 {
-        font-size: 28px;
-    }
-}
-
-/* Very small screens */
-@media (max-width: 430px) {
+    
     #sections_icons {
-        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
-        max-width: 300px;
     }
-
-    #img_icons {
-        height: 60px;
-    }
-
+    
     h1 {
         font-size: 22px;
     }
+}
 
-    #front_screen {
-        padding: 10px;
-        min-height: 100vh;
+/* VERY SMALL SCREENS */
+@media (max-width: 430px) {
+    #img_icons {
+        height: 35px;
     }
-
-    #social_medias {
-        gap: 10px;
-        padding: 10px;
+    
+    #sections_icons {
+        gap: 5px;
+    }
+    
+    h1 {
+        font-size: 18px;
     }
 
     #side_pannel {
@@ -276,7 +267,6 @@ h1 {
         height: 25px;
     }
 
-    /* Fix side panel hover on small screens */
     #social_icons:hover {
         transform: translate(30px, 0);
     }
