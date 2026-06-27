@@ -1,131 +1,384 @@
-#top_part{
+/* ============================== */
+/* RESET & BASE STYLES            */
+/* ============================== */
 
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-left: 5%;
-    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#pitch_icon{
-
-    height: 250px;
-    margin-left: 45%;  /* Centers horizontally */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
+/* ============================== */
+/* SPLASH VIDEO                   */
+/* ============================== */
 
-h2{
-    text-align: center;
-    font-size: 30px;
-}
-
-
-
-
-#side_pannel{
-   
-    width: 50px;
-    justify-self: left;
-    position: fixed;
-    margin-left: 50px;
-    margin-top:20px;
-    
-}
-
-#media_icons{
-
-    height:70px;
-  
-   transition: transform 0.5s ease;
-   
-}
-
-#media_icons:hover{
-
-    transform: translate(70px,0);
-}
-
-
-
-
-#div_splash_video{
-
-    height:100%;
+#div_splash_video {
+    height: 100%;
     width: 100%;
     z-index: 1000;
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
-    
 }
 
-#splash_video{
-
-    height:100%;
+#splash_video {
+    height: 100%;
     width: 100%;
     object-fit: cover;
     align-self: center;
     transition: opacity 0.5s ease;
-
 }
-
 
 #splash_video.fade-out {
     opacity: 0;
 }
 
-fieldset{
+/* ============================== */
+/* LEFT SIDE PANEL                */
+/* ============================== */
 
-   width: 100px;
-   border-radius: 10px;
-   border-width: 10px;
-   border-color: red;
+#side_pannel {
+    width: 50px;
+    justify-self: left;
+    position: fixed;
+    margin-left: 50px;
+    margin-top: 20px;
+    z-index: 1001;
 }
 
-#projects{
+#media_icons {
+    height: 70px;
+    transition: transform 0.5s ease;
+}
 
+#media_icons:hover {
+    transform: translate(70px, 0);
+}
+
+/* ============================== */
+/* TOP PART - CHANNELS / ICONS    */
+/* ============================== */
+
+#top_part {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#channels {
+    height: 150px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+#channels:hover {
+    transform: scale(1.05);
+}
+
+/* ============================== */
+/* HEADING                        */
+/* ============================== */
+
+h2 {
+    text-align: center;
+    font-size: 32px;
+}
+
+/* ============================== */
+/* PROJECTS / GAME ICONS          */
+/* ============================== */
+
+#projects {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 50px;
-    
+    padding: 20px;
 }
-img{
 
+fieldset {
+    width: 150px;
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: red;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset img {
+    height: 200px;
+    width: auto;
+}
+
+/* ============================== */
+/* GENERAL IMAGE STYLES           */
+/* ============================== */
+
+img {
     height: 300px;
+    transition: transform 0.3s ease;
 }
 
-/*SOCIAL MEDIAS*/
-
+/* ============================== */
+/* BOTTOM SOCIAL MEDIA BAR        */
+/* ============================== */
 
 #social_medias {
     position: fixed;
-    bottom: 0;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 30px;
-    width: 700px;
-    height: 160px;
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    padding: 10px 20px;
     text-align: center;
+    z-index: 1001;
 }
 
-#social_medias_form{
-display: flex;
-flex-direction: row;
+#social_medias_form {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-
+    align-items: center;
+    gap: 15px;
 }
 
-#social_icons{
-
-    height: 150px;
-   transition: transform 0.5s ease;
+#social_icons {
+    height: 80px;
+    width: auto;
+    transition: transform 0.5s ease;
 }
 
-#social_icons:hover{
-
-    transform: translate(0,-70px);
+#social_icons:hover {
+    transform: translate(0, -70px);
 }
 
+/* ============================== */
+/* RESPONSIVE - TABLET (1024px)   */
+/* ============================== */
+
+@media (max-width: 1024px) {
+    #channels {
+        height: 120px;
+    }
+
+    #top_part {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 28px;
+        padding: 12px 25px;
+    }
+
+    fieldset {
+        width: 130px;
+    }
+
+    fieldset img {
+        height: 150px;
+    }
+
+    #social_icons {
+        height: 60px;
+    }
+
+    #side_pannel {
+        margin-left: 20px;
+    }
+
+    #media_icons {
+        height: 50px;
+    }
+
+    #social_medias {
+        padding: 8px 15px;
+        border-radius: 20px;
+    }
+
+    #projects {
+        gap: 30px;
+    }
+}
+
+/* ============================== */
+/* RESPONSIVE - PHONE (768px)     */
+/* ============================== */
+
+@media (max-width: 768px) {
+    #channels {
+        height: 90px;
+    }
+
+    #top_part {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 22px;
+        padding: 10px 20px;
+        margin: 20px 0 15px 0;
+    }
+
+    fieldset {
+        width: 110px;
+    }
+
+    fieldset img {
+        height: 120px;
+    }
+
+    #social_icons {
+        height: 50px;
+    }
+
+    #social_medias_form {
+        gap: 10px;
+    }
+
+    #side_pannel {
+        margin-left: 10px;
+    }
+
+    #media_icons {
+        height: 40px;
+    }
+
+    #social_medias {
+        bottom: 10px;
+        padding: 5px 10px;
+        border-radius: 15px;
+        width: 95%;
+    }
+
+    #projects {
+        gap: 20px;
+        padding: 10px;
+    }
+}
+
+/* ============================== */
+/* RESPONSIVE - SMALL PHONE (430px) */
+/* ============================== */
+
+@media (max-width: 430px) {
+    #channels {
+        height: 60px;
+    }
+
+    #top_part {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    h2 {
+        font-size: 18px;
+        padding: 8px 15px;
+        margin: 15px 0 10px 0;
+    }
+
+    fieldset {
+        width: 90px;
+        border-width: 5px;
+    }
+
+    fieldset img {
+        height: 80px;
+    }
+
+    #social_icons {
+        height: 40px;
+    }
+
+    #social_icons:hover {
+        transform: translate(0, -30px);
+    }
+
+    #social_medias_form {
+        gap: 8px;
+    }
+
+    #side_pannel {
+        margin-left: 5px;
+        width: 30px;
+    }
+
+    #media_icons {
+        height: 30px;
+    }
+
+    #media_icons:hover {
+        transform: translate(30px, 0);
+    }
+
+    #social_medias {
+        bottom: 5px;
+        padding: 5px 8px;
+        border-radius: 10px;
+        width: 98%;
+    }
+
+    #projects {
+        gap: 15px;
+        padding: 8px;
+    }
+}
+
+/* ============================== */
+/* RESPONSIVE - EXTRA SMALL (360px) */
+/* ============================== */
+
+@media (max-width: 360px) {
+    #channels {
+        height: 45px;
+    }
+
+    h2 {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+
+    fieldset {
+        width: 75px;
+    }
+
+    fieldset img {
+        height: 60px;
+    }
+
+    #social_icons {
+        height: 35px;
+    }
+
+    #social_icons:hover {
+        transform: translate(0, -20px);
+    }
+
+    #social_medias_form {
+        gap: 5px;
+    }
+
+    #media_icons {
+        height: 25px;
+    }
+}
